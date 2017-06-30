@@ -1,0 +1,128 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>pe.open.client.escale</groupId>
+  <artifactId>pe.open.client.escale.adm.ws</artifactId>
+  <version>1.0.0-PRO</version>
+  <packaging>war</packaging>
+
+  <name>pe.open.client.escale.adm.ws</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jdk.version>1.8</jdk.version>
+    <javaee.api.version>7.0</javaee.api.version>
+    <org.springframework.security.version>4.0.2.RELEASE</org.springframework.security.version>
+    <com.google.code.gson.version>2.7</com.google.code.gson.version>
+	<com.thetransactioncompany.version>2.5</com.thetransactioncompany.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+	    <groupId>javax</groupId>
+	    <artifactId>javaee-api</artifactId>
+	    <version>${javaee.api.version}</version>
+	    <scope>provided</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-crypto</artifactId>
+	    <version>${org.springframework.security.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.google.code.gson</groupId>
+	    <artifactId>gson</artifactId>
+	    <version>${com.google.code.gson.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>com.thetransactioncompany</groupId>
+	    <artifactId>cors-filter</artifactId>
+	    <version>${com.thetransactioncompany.version}</version>
+	</dependency>
+<!-- 	<dependency> -->
+<!-- 	    <groupId>log4j</groupId> -->
+<!-- 	    <artifactId>log4j</artifactId> -->
+<!-- 	    <version>1.2.15</version> -->
+<!-- 	</dependency> -->
+	<dependency>
+	    <groupId>org.json</groupId>
+	    <artifactId>json</artifactId>
+	    <version>20090211</version>
+	</dependency>
+<!-- 	<dependency> -->
+<!-- 	    <groupId>org.eclipse.jetty</groupId> -->
+<!-- 	    <artifactId>jetty-util</artifactId> -->
+<!-- 	    <version>8.1.5.v20120716</version> -->
+<!-- 	</dependency> -->
+<!-- 	<dependency> -->
+<!-- 	    <groupId>org.eclipse.jetty</groupId> -->
+<!-- 	    <artifactId>jetty-servlets</artifactId> -->
+<!-- 	    <version>8.1.5.v20120716</version> -->
+<!-- 	</dependency> -->
+	
+<!--     INICIO Proyectos pe.open.client.escale.* -->
+    <dependency>
+    	<groupId>pe.open.client.escale</groupId>
+    	<artifactId>pe.open.client.escale.common</artifactId>
+    	<version>1.0.0-PRO</version>
+    </dependency>
+    <dependency>
+    	<groupId>pe.open.client.escale</groupId>
+    	<artifactId>pe.open.client.escale.adm.be</artifactId>
+    	<version>1.0.0-PRO</version>
+    </dependency>
+    <dependency>
+    	<groupId>pe.open.client.escale</groupId>
+    	<artifactId>pe.open.client.escale.adm.be.client</artifactId>
+    	<version>1.0.0-PRO</version>
+    </dependency>
+    <dependency>
+    	<groupId>pe.open.client.escale</groupId>
+    	<artifactId>pe.open.client.escale.adm.bp</artifactId>
+    	<version>1.0.0-PRO</version>
+    </dependency>
+  </dependencies>
+<!--     FIN Proyectos pe.open.client.escale.* --> 
+  
+  <build>
+  	<resources>
+	      <resource>
+	        <directory>src\main\java</directory>
+			<includes>                      
+				<include>**/*.xml</include>
+				<include>**/*.properties</include>
+			</includes>
+	      </resource>
+	      <resource>
+	        <directory>src\main\resources</directory>
+	      </resource>
+	</resources>
+  	<plugins>
+       <plugin>
+           <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-compiler-plugin</artifactId>   
+           <version>3.2</version>       
+           <configuration>
+           		<path>/admws</path>
+               	<source>${jdk.version}</source>
+               	<target>${jdk.version}</target>
+           </configuration>
+       </plugin>
+       <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-war-plugin</artifactId>
+			<version>2.3</version>
+		</plugin>
+  	</plugins>
+  </build>
+  
+</project>

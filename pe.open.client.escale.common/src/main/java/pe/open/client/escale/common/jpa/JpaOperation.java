@@ -1,0 +1,10 @@
+package pe.open.client.escale.common.jpa;
+
+
+public enum JpaOperation
+{
+  PERSIST,  MERGE,  REMOVE,  REFRESH,  FLUSH,  FIND,  GET_REFERENCE,  JOIN_TRANSACTION,  CONTAINS,  CREATE_QUERY,  CREATE_NAMED_QUERY,  CREATE_NATIVE_QUERY,  LOCK,  CLEAR,  CLOSE,  GET_RESULT_LIST,  GET_SINGLE_RESULT,  EXECUTE_UPDATE;
+  
+  private JpaOperation() {}
+}
+
